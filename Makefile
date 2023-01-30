@@ -6,4 +6,6 @@ install-softether:
 
 	// run the soft ether make file
 
+	// open ports on firewall
+
 all: install-x-ui 
