@@ -8,4 +8,6 @@ install-softether:
 
 	// open ports on firewall
 
+	// make vpn service
+
 all: install-x-ui 
