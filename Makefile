@@ -10,4 +10,6 @@ install-softether:
 
 	// make vpn service
 
+	// run vpn service
+
 all: install-x-ui 
