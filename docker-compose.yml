@@ -6,11 +6,22 @@ services:
       dockerfile: Dockerfile
     container_name: neo-nginx
     volumes:
-      - ./shared:/var/www/htm
+      - ./shared/nginx:/var/www/htm
     depends_on:
       - softether
     networks:
       - neovpn
+
+  softether:
+    build:
+      context: ./softether
+      dockerfile: Dockerfile
+    container_name: neo-softether
+    volumes:
+      - ./shared/softether: /app
+    networks:
+      - neovpn
+
     
 networks:
   neovpn:
