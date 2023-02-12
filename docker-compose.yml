@@ -1,0 +1,10 @@
+services:
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: neo-nginx
+    volumes:
+      - ./shared:/var/www/htm
+    
