@@ -7,4 +7,10 @@ services:
     container_name: neo-nginx
     volumes:
       - ./shared:/var/www/htm
+    depends_on:
+      - softether
+    networks:
+      - neovpn
     
+networks:
+  neovpn:
