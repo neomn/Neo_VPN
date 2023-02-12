@@ -18,7 +18,9 @@ services:
       dockerfile: Dockerfile
     container_name: neo-softether
     volumes:
-      - ./shared/softether: /app
+      - type: bind
+        source: ./shared/softether
+        target: ./app
     networks:
       - neovpn
 
