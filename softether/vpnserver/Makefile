@@ -18,15 +18,15 @@ default:
 
 main:
 	@echo "Preparing SoftEther VPN Server..."
-	-ranlib ./lib/libcharset.a
-	-ranlib ./lib/libcrypto.a
-	-ranlib ./lib/libedit.a
-	-ranlib ./lib/libiconv.a
-	-ranlib ./lib/libintelaes.a
-	-ranlib ./lib/libncurses.a
-	-ranlib ./lib/libssl.a
-	-ranlib ./lib/libz.a
-	-ranlib ./code/vpnserver.a
+	-ranlib lib/libcharset.a
+	-ranlib lib/libcrypto.a
+	-ranlib lib/libedit.a
+	-ranlib lib/libiconv.a
+	-ranlib lib/libintelaes.a
+	-ranlib lib/libncurses.a
+	-ranlib lib/libssl.a
+	-ranlib lib/libz.a
+	-ranlib code/vpnserver.a
 	$(CC) code/vpnserver.a $(OPTIONS) -o vpnserver
 	-ranlib code/vpncmd.a
 	$(CC) code/vpncmd.a $(OPTIONS) -o vpncmd
