@@ -10,5 +10,12 @@ RUN /bin/sh -c "chmod 700 vpnserver vpncmd"
 RUN /bin/sh -c "vpnserver start"
 
 # RUN /bin/sh -c "vpncmd"
-# RUN /bin/sh -c "apt update"
+# RUN /bin/sh -c ""
+# RUN /bin/sh -c ""
+# RUN /bin/sh -c ""
+# RUN /bin/sh -c ""
+# RUN /bin/sh -c ""
+# RUN /bin/sh -c ""
+# RUN /bin/sh -c ""
+
 
