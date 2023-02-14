@@ -18,18 +18,10 @@ RUN cd /usr/local/vpnserver && chmod 600 *
 RUN cd /usr/local/vpnserver && chmod 700 vpnserver vpncmd
 RUN mv /usr/local/vpnserver/vpnserver.service  /lib/systemd/system
 
-
-
-
-# RUN /usr/local/vpnserver/vpnserver start
-
-# RUN /bin/sh -c "vpncmd"
-# RUN /bin/sh -c ""
-# RUN /bin/sh -c ""
-# RUN /bin/sh -c ""
-# RUN /bin/sh -c ""
-# RUN /bin/sh -c ""
-# RUN /bin/sh -c ""
-# RUN /bin/sh -c ""
+RUN ufw allow 443
+RUN ufw allow 500,4500/udp
+RUN ufw allow 1701
+RUN ufw allow 1194
+RUN ufw allow 5555
 
 
