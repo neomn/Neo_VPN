@@ -12,21 +12,12 @@ RUN /bin/sh -c "apt install -y libreadline-dev"
 RUN /bin/sh -c "apt install -y libncurses-dev"
 RUN /bin/sh -c "apt install -y libssl-dev"
 
-# RUN mkdir /home/softether
-# RUN mkdir /home/softether/vpnserver
-# COPY ./vpnserver/. /home/softether/vpnserver
-# RUN cd /home/softether/vpnserver
-# RUN ls -la 
-
 COPY ./vpnserver/. /usr/local/vpnserver
-RUN ls -la /usr/local/vpnserver 
 RUN cd /usr/local/vpnserver && make
-RUN pwd
-
-# COPY ./vpnserver/. /usr/local/vpnserver
-# RUN /bin/sh -c "chmod 600 *"
-# RUN /bin/sh -c "chmod 700 vpnserver vpncmd"
-# RUN /bin/sh -c "vpnserver start"
+RUN cd /usr/local/vpnserver && chmod 600 *
+RUN cd /usr/local/vpnserver && chmod 700 vpnserver vpncmd
+RUN cd /usr/local/vpnserver && ls -la
+RUN cd /usr/local/vpnserver && vpnserver start
 
 # RUN /bin/sh -c "vpncmd"
 # RUN /bin/sh -c ""
