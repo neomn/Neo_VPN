@@ -16,8 +16,12 @@ COPY ./vpnserver/. /usr/local/vpnserver
 RUN cd /usr/local/vpnserver && make
 RUN cd /usr/local/vpnserver && chmod 600 *
 RUN cd /usr/local/vpnserver && chmod 700 vpnserver vpncmd
-RUN cd /usr/local/vpnserver && ls -la
-RUN /usr/local/vpnserver/vpnserver start
+RUN mv /usr/local/vpnserver/vpnserver.service  /lib/systemd/system
+
+
+
+
+# RUN /usr/local/vpnserver/vpnserver start
 
 # RUN /bin/sh -c "vpncmd"
 # RUN /bin/sh -c ""
