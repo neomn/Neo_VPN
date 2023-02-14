@@ -16,8 +16,11 @@ COPY ./vpnserver/. /usr/local/vpnserver
 RUN cd /usr/local/vpnserver && make
 RUN cd /usr/local/vpnserver && chmod 600 *
 RUN cd /usr/local/vpnserver && chmod 700 vpnserver vpncmd
-RUN mv /usr/local/vpnserver/vpnserver.service  /lib/systemd/system
+RUN cp /usr/local/vpnserver/vpnserver.service  /lib/systemd/system
 RUN cp -f /usr/local/vpnserver/sysctl.conf  /etc/sysctl.conf
+RUN systemctl enable vpnserver 
+RUN systemctl start vpnserver 
+RUN systemctl status vpnserver 
 
 RUN ufw allow 443
 RUN ufw allow 500,4500/udp
