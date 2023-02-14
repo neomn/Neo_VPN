@@ -1,26 +1,26 @@
 services:
 
-  nginx:
-    build: 
-      context: ./nginx
-      dockerfile: Dockerfile
-    container_name: neo-nginx
-    volumes:
-      - ./shared/nginx:/var/www/htm
-    depends_on:
-      - softether
-    networks:
-      - neovpn
+  # nginx:
+  #   build: 
+  #     context: ./nginx
+  #     dockerfile: Dockerfile
+  #   container_name: nginx
+  #   volumes:
+  #     - ./shared/nginx:/var/www/htm
+  #   depends_on:
+  #     - softether
+  #   networks:
+  #     - neovpn
 
   softether:
     build:
       context: ./softether
       dockerfile: Dockerfile
-    container_name: neo-softether
+    container_name: softether
     volumes:
       - type: bind
-        source: ./shared/softether
-        target: ./app
+        source: ./shared/softether/.
+        target: /home/shared
     networks:
       - neovpn
 

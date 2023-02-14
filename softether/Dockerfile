@@ -1,6 +1,7 @@
 FROM ubuntu:23.04
 RUN /bin/sh -c "apt update"
 RUN /bin/sh -c "apt install -y sudo"
+RUN /bin/sh -c "apt install -y systemctl"
 RUN /bin/sh -c "apt install -y build-essential"
 RUN /bin/sh -c "apt install -y wget"
 RUN /bin/sh -c "apt install -y make"
@@ -14,12 +15,7 @@ RUN /bin/sh -c "apt install -y libncurses-dev"
 RUN /bin/sh -c "apt install -y libssl-dev"
 RUN /bin/sh -c "apt install -y ufw"
 
-
-RUN sudo ufw allow 443
-RUN sudo ufw allow 500,4500/udp
-RUN sudo ufw allow 1701
-RUN sudo ufw allow 1194
-RUN sudo ufw allow 5555
+RUN mkdir /home/shared
 
 COPY ./vpnserver/. /usr/local/vpnserver
 RUN cd /usr/local/vpnserver && make
@@ -29,7 +25,13 @@ RUN cp /usr/local/vpnserver/vpnserver.service  /lib/systemd/system
 RUN cp -f /usr/local/vpnserver/sysctl.conf  /etc/sysctl.conf
 RUN systemctl enable vpnserver 
 RUN systemctl start vpnserver 
-RUN systemctl status vpnserver 
+# RUN systemctl status vpnserver 
+
+# RUN sudo ufw allow 443
+# RUN sudo ufw allow 500,4500/udp
+# RUN sudo ufw allow 1701
+# RUN sudo ufw allow 1194
+# RUN sudo ufw allow 5555
 
 
 
