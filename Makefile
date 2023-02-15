@@ -1,4 +1,7 @@
-install-x-ui: 
+install-docker: 
+	#install-docker-and-docker-compose
+	apt install -y docker docker-compose
+
 
 install-softether:
 
