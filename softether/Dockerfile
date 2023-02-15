@@ -26,7 +26,7 @@ RUN cp /usr/local/vpnserver/vpnserver.service  /lib/systemd/system
 RUN cp -f /usr/local/vpnserver/sysctl.conf  /etc/sysctl.conf
 RUN systemctl enable vpnserver 
 RUN systemctl start vpnserver 
-# RUN systemctl status vpnserver 
+RUN /usr/local/vpnserver/set_default_password_for_vpn_server.exp 
 
 # RUN sudo ufw allow 443
 # RUN sudo ufw allow 500,4500/udp
