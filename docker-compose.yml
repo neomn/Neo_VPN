@@ -33,6 +33,12 @@ services:
     networks:
       - neovpn
 
+
+  x-ui:
+    build:
+      context: ./x-ui
+      dockerfile: Dockerfile
+
     
 networks:
   neovpn:
