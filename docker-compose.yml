@@ -38,6 +38,9 @@ services:
     build:
       context: ./x-ui
       dockerfile: Dockerfile
+    container_name: x-ui
+    networks: 
+      - neovpn
 
     
 networks:
