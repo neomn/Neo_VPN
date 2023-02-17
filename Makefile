@@ -10,4 +10,4 @@ run-all-clients:
 	#run all clients
 	docker compose up -d
 
-all: install-pre-requisits install-docker runn-all-clients 
+all: install-pre-requisits     install-docker     runn-all-clients 
