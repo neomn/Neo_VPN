@@ -25,12 +25,4 @@ RUN cd /usr/local/vpnserver && chmod 600 *
 RUN cd /usr/local/vpnserver && chmod 700 vpnserver vpncmd
 RUN cp /usr/local/vpnserver/vpnserver.service  /lib/systemd/system
 RUN cp -f /usr/local/vpnserver/sysctl.conf  /etc/sysctl.conf
-# RUN /usr/local/vpnserver/vpnserver start
-#RUN chmod +x /usr/local/vpnserver/set_default_password_for_vpn_server.exp 
-#RUN /usr/local/vpnserver/set_default_password_for_vpn_server.exp 
-
-
-
-
-
 
