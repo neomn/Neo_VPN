@@ -15,6 +15,8 @@ RUN /bin/sh -c "apt install -y libreadline-dev"
 RUN /bin/sh -c "apt install -y libncurses-dev"
 RUN /bin/sh -c "apt install -y libssl-dev"
 RUN /bin/sh -c "apt install -y ufw"
+RUN /bin/sh -c "apt install -y nano"
+
 
 RUN mkdir /home/shared
 
