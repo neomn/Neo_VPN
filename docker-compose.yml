@@ -22,6 +22,9 @@ services:
       - type: bind
         source: ./shared/softether/.
         target: /home/shared
+    command: /bin/sh -c " /usr/local/vpnserver/vpnserver start &&\
+                          chmod +x /usr/local/vpnserver/set_default_password_for_vpn_server.exp &&\
+                          /usr/local/vpnserver/set_default_password_for_vpn_server.exp &&\"
     ports:
       - 5544:5544
       - 443:443
@@ -35,13 +38,13 @@ services:
       - neovpn
 
 
-  x-ui:
-    build:
-      context: ./x-ui
-      dockerfile: Dockerfile
-    container_name: x-ui
-    networks: 
-      - neovpn
+  # x-ui:
+  #   build:
+  #     context: ./x-ui
+  #     dockerfile: Dockerfile
+  #   container_name: x-ui
+  #   networks: 
+  #     - neovpn
 
     
 networks:
