@@ -32,11 +32,6 @@ RUN cp -f /usr/local/vpnserver/sysctl.conf  /etc/sysctl.conf
 # RUN systemctl enable vpnserver 
 # RUN systemctl start vpnserver 
 
-# RUN sudo ufw allow 443
-# RUN sudo ufw allow 500,4500/udp
-# RUN sudo ufw allow 1701
-# RUN sudo ufw allow 1194
-# RUN sudo ufw allow 5555
 
 
 
