@@ -28,7 +28,8 @@ services:
                           /usr/local/vpnserver/vpnserver stop &&\
                           systemctl enable vpnserver &&\
                           systemctl start vpnserver &&\
-                          systemctl status vpnserver &&\"
+                          systemctl status vpnserver &&\
+                          cat /usr/local/vpnserver/print-default-password.txt &&\
                           tail -F keepRunning"
     ports:
       - 5544:5544
