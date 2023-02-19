@@ -13,7 +13,11 @@ run all vpn servers with just single command >
 <br>
 <br>
 
+nginx Considerations:
+-
 
+<br>
+<br>
 
 SoftEther Considerations:
 -
