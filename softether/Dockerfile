@@ -1,8 +1,8 @@
 FROM ubuntu:23.04
 RUN /bin/sh -c "apt update"
+RUN /bin/sh -c "apt install -y build-essential"
 RUN /bin/sh -c "apt install -y systemctl"
 RUN /bin/sh -c "apt install -y expect"
-RUN /bin/sh -c "apt install -y build-essential"
 RUN /bin/sh -c "apt install -y wget"
 RUN /bin/sh -c "apt install -y make"
 RUN /bin/sh -c "apt install -y curl"
