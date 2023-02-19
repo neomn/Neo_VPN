@@ -13,7 +13,16 @@ run all vpn servers with just single command >
 <br>
 <br>
 
+
+
 SoftEther Considerations:
 -
 the default password is  > password <br>
 you can change default password in /softether/vpmserver/set_default_password_for_vpn_server.exp before running docker compose up cpmmand.
+
+<br>
+<br>
+
+X-UI Considerations:
+-
+
